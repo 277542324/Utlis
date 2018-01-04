@@ -10,7 +10,9 @@
 <br><br>
 ### UtilsGson（解析Json的工具类）
 * GsonToBean（gsonString，cls）
- * gsonString（类型为String的Json值）
- * cls（解析对应的Json的模型类）
+* gsonString（类型为String的Json值）
+* cls（解析对应的Json的模型类）
 <br><br>
 ### UtilsTools使用方法
+* getScreenWidth （获取屏幕宽度，需传入当前Activity）
+* getScreenHeight （获取屏幕高度度，需传入当前Activity）
