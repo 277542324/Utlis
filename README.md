@@ -44,6 +44,7 @@
     * RelativeLayout.ABOVE（位于给定ID控件之上，配合Rid使用即控件ID）
     * RelativeLayout.BELOW（位于给定ID控件之下，配合Rid使用即控件ID）
   * Rid （使用ABOVE、BELOW，必须填入控件ID，不使用则填入0）
+
 * edittextviewselection （输入框光标移动到最后）
    * view（EditText）
    * length (EditText中内容的长度)
