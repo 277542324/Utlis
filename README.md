@@ -48,10 +48,10 @@
 * edittextviewselection （输入框光标移动到最后）
    * view（EditText）
    * length (EditText中内容的长度)
-* callPhone（调起拨打电话）
+* callPhone（调起拨打电话提示）
    * mContext（传入当前Activity）
-   * phone（需要拨打电话号码）
-   * titleMsg（提示标题头）
-   * msg（提示内容）
-   * titleSize（提示标题字体Size）
-   * contentSize（提示内容字体Size）
+   * phone（需要拨打电话号码）
+   * titleMsg（提示标题头）
+   * msg（提示内容）
+   * titleSize（提示标题字体Size）
+   * contentSize（提示内容字体Size）
