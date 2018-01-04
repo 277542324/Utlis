@@ -39,3 +39,4 @@
   * right（直接填入int 0~xxx,无需使用dip2px方法包裹）
   * bottom（直接填入int 0~xxx,无需使用dip2px方法包裹）
   * addRule （绝对定位传入值）
+   * RelativeLayout.ALIGN_PARENT_TOP
