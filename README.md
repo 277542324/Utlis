@@ -19,8 +19,8 @@
 * liearlayoutviewsize （动态设置LinearLayout包裹下的控件大小以及间距，需传入以下方法）
   * mContext（传入当前Activity）
   * view（传入需要设置的控件）
-  * width（如果传入是通过getScreenWidth获取屏幕尺寸就不用带上dip2px方法，否则就要带dip2px方法传入值，不然大小会不准确）
-  * height （如果传入是通过getScreenWidth获取屏幕尺寸就不用带上dip2px方法，否则就要带dip2px方法传入值，不然大小会不准确）
+  * width（如是通过getScreenWidth获取大小就不用带上dip2px方法，则要带dip2px方法传入值）
+  * height （如是通过getScreenWidth获取大小不用带上dip2px方法，则要带dip2px方法传入值）
   * left （直接填入int 0~xxx,无需使用dip2px方法包裹）
   * top（直接填入int 0~xxx,无需使用dip2px方法包裹）
   * right（直接填入int 0~xxx,无需使用dip2px方法包裹）
