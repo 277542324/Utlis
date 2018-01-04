@@ -5,5 +5,5 @@
 * _class（目标Activity）
 * map（intent.putExtra(key,value)）
   * key（键值）
-  * value （传递方法）
+  * value （传递的值）
 * mBundle (传入Bundle构造方法)
