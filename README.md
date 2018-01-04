@@ -43,3 +43,5 @@
     * RelativeLayout.ALIGN_PARENT_BOTTOM（下）
     * RelativeLayout.ALIGN_PARENT_LEFT（左）
     * RelativeLayout.ALIGN_PARENT_RIGHT（右）
+    * RelativeLayout.ABOVE（位于给定DI控件之上，配合Rid使用即控件ID）
+    * RelativeLayout.BELOW（位于给定DI控件之下，配合Rid使用即控件ID）
