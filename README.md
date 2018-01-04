@@ -26,7 +26,6 @@
   * right（直接填入int 0~xxx,无需使用dip2px方法包裹）
   * bottom（直接填入int 0~xxx,无需使用dip2px方法包裹）
 * frameLayoutViewsize（用法同上）
-
 * relativepositionsize（动态设置Relativepositionsize包裹下的控件大小以及间距，需传入以下方法）
   * mContext（传入当前Activity）
   * view（传入需要设置的控件）
@@ -45,7 +44,6 @@
     * RelativeLayout.ABOVE（位于给定ID控件之上，配合Rid使用即控件ID）
     * RelativeLayout.BELOW（位于给定ID控件之下，配合Rid使用即控件ID）
   * Rid （使用ABOVE、BELOW，必须填入控件ID，不使用则填入0）
-  
 * edittextviewselection （输入框光标移动到最后）
    * view（EditText）
    * length (EditText中内容的长度)
