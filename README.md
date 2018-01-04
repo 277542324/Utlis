@@ -8,7 +8,7 @@
   * value （传递的值）
 * mBundle (传入Bundle构造方法)
 <br><br>
->UtilsGson（解析Json的工具类）
+### UtilsGson（解析Json的工具类）
 >>GsonToBean（gsonString，cls）
 * gsonString（类型为String的Json值）
 * cls（解析对应的Json的模型类）
