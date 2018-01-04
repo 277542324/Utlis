@@ -25,7 +25,7 @@
   * top（直接填入int 0~xxx,无需使用dip2px方法包裹）
   * right（直接填入int 0~xxx,无需使用dip2px方法包裹）
   * bottom（直接填入int 0~xxx,无需使用dip2px方法包裹）
-* frameLayoutViewsize（用法同上）/<br>
+* frameLayoutViewsize（用法同上）
 * relativepositionsize（动态设置Relativepositionsize包裹下的控件大小以及间距，需传入以下方法）
 * getScreenWidth （获取屏幕宽度，需传入当前Activity）
 * getScreenHeight （获取屏幕高度度，需传入当前Activity）
@@ -38,3 +38,4 @@
   * top（直接填入int 0~xxx,无需使用dip2px方法包裹）
   * right（直接填入int 0~xxx,无需使用dip2px方法包裹）
   * bottom（直接填入int 0~xxx,无需使用dip2px方法包裹）
+  * addRule （绝对定位传入值）
