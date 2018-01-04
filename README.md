@@ -35,7 +35,7 @@
   * top（直接填入int 0~xxx,无需使用dip2px方法包裹）
   * right（直接填入int 0~xxx,无需使用dip2px方法包裹）
   * bottom（直接填入int 0~xxx,无需使用dip2px方法包裹）
-  * RuleStatus（使用绝对定位填入-1，使用位于控件填入-2，不使用填入0）
+  * RuleStatus（使用绝对定位填入-1，使用位于控件填入-2，不使用填入0）
   * addRule （绝对定位传入值）
     * RelativeLayout.ALIGN_PARENT_TOP（上）
     * RelativeLayout.ALIGN_PARENT_BOTTOM（下）
