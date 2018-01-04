@@ -49,9 +49,9 @@
    * view（EditText）
    * length (EditText中内容的长度)
 * callPhone（调起拨打电话）
-   * mContext（）
-   * phone（）
-   * titleMsg（）
-   * msg（）
-   * titleSize（）
-   * contentSize（）
+   * mContext（传入当前Activity）
+   * phone（需要拨打电话号码）
+   * titleMsg（提示标题头）
+   * msg（提示内容）
+   * titleSize（提示标题字体Size）
+   * contentSize（提示内容字体Size）
