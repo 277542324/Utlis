@@ -35,11 +35,12 @@
   * top（直接填入int 0~xxx,无需使用dip2px方法包裹）
   * right（直接填入int 0~xxx,无需使用dip2px方法包裹）
   * bottom（直接填入int 0~xxx,无需使用dip2px方法包裹）
-  * addRule （绝对定位传入值）
+  * RuleStatus（使用绝对定位填入-1，使用位于控件填入-2，不使用填入0）
+  * addRule （绝对定位传入值）
     * RelativeLayout.ALIGN_PARENT_TOP（上）
     * RelativeLayout.ALIGN_PARENT_BOTTOM（下）
     * RelativeLayout.ALIGN_PARENT_LEFT（左）
     * RelativeLayout.ALIGN_PARENT_RIGHT（右）
-    * RelativeLayout.ABOVE（位于给定DI控件之上，配合Rid使用即控件ID）
-    * RelativeLayout.BELOW（位于给定DI控件之下，配合Rid使用即控件ID）
+    * RelativeLayout.ABOVE（位于给定ID控件之上，配合Rid使用即控件ID）
+    * RelativeLayout.BELOW（位于给定ID控件之下，配合Rid使用即控件ID）
   * Rid （使用ABOVE、BELOW，必须填入控件ID，不使用则填入0）
