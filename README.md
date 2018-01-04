@@ -15,6 +15,7 @@
 <br><br>
 ### UtilsTools使用方法
 * getScreenWidth （获取屏幕宽度，需传入当前Activity）<br>
+
 * getScreenHeight （获取屏幕高度度，需传入当前Activity）<br>
 * liearlayoutviewsize （动态设置LinearLayout包裹下的控件大小以及间距，需传入以下方法）
   * mContext（传入当前Activity）
