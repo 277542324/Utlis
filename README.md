@@ -7,8 +7,7 @@
   * key（键值）
   * value （传递的值）
 * mBundle (传入Bundle构造方法)
-
-
+/<br>/<br>
 >UtilsGson（解析Json的工具类）
 >>GsonToBean（gsonString,cls）
 * gsonString（类型为String的Json值）
