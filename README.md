@@ -48,3 +48,4 @@
 * edittextviewselection （输入框光标移动到最后）
    * view（EditText）
    * length (EditText中内容的长度)
+* callPhone（调起拨打电话）
