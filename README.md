@@ -42,4 +42,4 @@
     * RelativeLayout.ALIGN_PARENT_RIGHT（右）
     * RelativeLayout.ABOVE（位于给定DI控件之上，配合Rid使用即控件ID）
     * RelativeLayout.BELOW（位于给定DI控件之下，配合Rid使用即控件ID）
-  * Rid （使用ABOVE、BELOW，必须填入控件ID，不使用则填入0）
+  * Rid （使用ABOVE、BELOW，必须填入控件ID，不使用则填入0）
