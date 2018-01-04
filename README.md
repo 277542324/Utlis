@@ -6,3 +6,4 @@
 >>>map（intent.putExtra(key,value)）
 >>>>key（键值）
 >>>>value （传递方法）
+>>>mBundle (传入Bundle构造方法)
