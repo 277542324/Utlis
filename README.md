@@ -49,3 +49,8 @@
    * view（EditText）
    * length (EditText中内容的长度)
 * callPhone（调起拨打电话）
+   * mContext
+   * phone
+   * msg
+   * titleSize
+   * contentSize
