@@ -31,6 +31,47 @@ public class OpenActManager {
         return manager;
     }
 
+
+    /**
+     * 启动一个Activity
+     *
+     * @param _this
+     * @param _class
+     */
+    public  void goActivity(Context _this, Class<? extends Activity> _class) {
+        intent.setClass(_this, _class);
+        _this.startActivity(intent);
+    }
+
+    /**
+     * 启动一个Activity
+     *
+     * @param _this
+     * @param _class
+     */
+    public  void goActivity(Context _this, Class<? extends Activity> _class, HashMap<String, String> map) {
+        if (map != null ? map.size() > 0 : false) {
+            for (String key : map.keySet()) {
+                String value = map.get(key);
+                intent.putExtra(key, value);
+            }
+        }
+        intent.setClass(_this, _class);
+        _this.startActivity(intent);
+    }
+
+    /**
+     * 启动一个Activity
+     *
+     * @param _this
+     * @param _class
+     */
+    public  void goActivity(Context _this, Class<? extends Activity> _class,Bundle mBundle) {
+        intent.putExtra("mBunld", mBundle);
+        intent.setClass(_this, _class);
+        _this.startActivity(intent);
+    }
+
     /**
      * 启动一个Activity
      *
@@ -48,6 +89,5 @@ public class OpenActManager {
         }
         intent.setClass(_this, _class);
         _this.startActivity(intent);
-        _this = null;
     }
 }

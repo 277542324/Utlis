@@ -3,6 +3,7 @@ package com.xiao.utils;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.content.ContextCompat;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.EditText;
@@ -87,6 +88,37 @@ public class UtilsTools {
      * @param view
      * @param width
      * @param height
+     */
+    public static void relativepositionsize(Context mContext, View view, int width, int height) {
+        RelativeLayout.LayoutParams beslp = new RelativeLayout.LayoutParams(width, height);
+        view.setLayoutParams(beslp);
+    }
+
+    /**
+     * 动态设置控件的大小
+     *
+     * @param mContext
+     * @param view
+     * @param width
+     * @param height
+     * @param left
+     * @param top
+     * @param right
+     * @param bottom
+     */
+    public static void relativepositionsize(Context mContext, View view, int width, int height, int left, int top, int right, int bottom) {
+        RelativeLayout.LayoutParams beslp = new RelativeLayout.LayoutParams(width, height);
+        beslp.setMargins(dip2px(mContext, left), dip2px(mContext, top), dip2px(mContext, right), dip2px(mContext, bottom));
+        view.setLayoutParams(beslp);
+    }
+
+    /**
+     * 动态设置控件的大小
+     *
+     * @param mContext
+     * @param view
+     * @param width
+     * @param height
      * @param left
      * @param top
      * @param right
@@ -98,20 +130,34 @@ public class UtilsTools {
      *                 RelativeLayout.ABOVE、
      *                 RelativeLayout.BELOW)
      */
-    public static void relativepositionsize(Context mContext, View view, int width, int height, int left, int top, int right, int bottom, int addRule, int Rid) {
+    public static void relativepositionsize(Context mContext, View view, int width, int height, int left, int top, int right, int bottom, int RuleStatus,int addRule, int Rid) {
         /**status1 不要求输入根据ID进行位置定位*/
         int status1 = -1;
         /**status2 输入根据ID进行位置定位*/
         int status2 = -2;
         RelativeLayout.LayoutParams beslp = new RelativeLayout.LayoutParams(width, height);
         beslp.setMargins(dip2px(mContext, left), dip2px(mContext, top), dip2px(mContext, right), dip2px(mContext, bottom));
-        if (addRule == status1) {
+        if (RuleStatus == status1) {
             beslp.addRule(addRule);
-        } else if (addRule == status2) {
+        } else if (RuleStatus == status2) {
             beslp.addRule(addRule, Rid);
         }
         view.setLayoutParams(beslp);
     }
+
+    /**
+     * 动态设置控件的大小
+     *
+     * @param mContext
+     * @param view
+     * @param width
+     * @param height
+     */
+    public static void frameLayoutViewsize(Context mContext, View view, int width, int height) {
+        FrameLayout.LayoutParams Beslp = new FrameLayout.LayoutParams(width, height);
+        view.setLayoutParams(Beslp);
+    }
+
 
     /**
      * 动态设置控件的大小
@@ -130,7 +176,21 @@ public class UtilsTools {
         Beslp.setMargins(dip2px(mContext, left), dip2px(mContext, top), dip2px(mContext, right), dip2px(mContext, bottom));
         view.setLayoutParams(Beslp);
     }
-    
+
+
+    /**
+     * 动态设置控件的大小
+     *
+     * @param mContext
+     * @param view
+     * @param width
+     * @param height
+     */
+    public static void linearLayoutViewSize(Context mContext, View view, int width, int height) {
+        LinearLayout.LayoutParams Beslp = new LinearLayout.LayoutParams(width, height);
+        view.setLayoutParams(Beslp);
+    }
+
     /**
      * 动态设置控件的大小
      *
@@ -158,10 +218,10 @@ public class UtilsTools {
     /**
      * 拨打电话统一操作管理
      */
-    public static void Call_Phone(final Context mContext, final String phone, final String msg, float titleSize, float contentSize) {
+    public static void callPhone(final Context mContext, final String phone, final String titleMsg, final String msg, float titleSize, float contentSize) {
         final NormalDialog dialog = new NormalDialog(mContext);
         dialog.content(msg + "：" + phone).style(NormalDialog.STYLE_TWO)////
-                .titleTextSize(titleSize).contentTextSize(contentSize)
+                .titleTextSize(titleSize).contentTextSize(contentSize).title(titleMsg)
                 .show();
         dialog.setOnBtnClickL(
                 new OnBtnClickL() {
@@ -180,4 +240,7 @@ public class UtilsTools {
                 });
     }
 
+    public static int setColor(Context mContext, int resColor) {
+        return ContextCompat.getColor(mContext, resColor);
+    }
 }
