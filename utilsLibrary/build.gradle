@@ -33,6 +33,4 @@ dependencies {
     compile 'com.flyco.animation:FlycoAnimation_Lib:1.0.0@aar'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.google.code.gson:gson:2.8.0'
-    //侵入式方法
-    compile 'com.jaeger.statusbaruitl:library:1.4.0'
 }
