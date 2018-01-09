@@ -11,7 +11,7 @@
 ### UtilsGson（解析Json的工具类）
 |方法名|说明|
 |:-------------|:-------------|
-|类型为String的Json值|
+|类型为String的Json值| 
 | gsonString|类型为String的Json值|
 | cls|解析对应的Json的模型类|
 * GsonToBean（gsonString，cls）
