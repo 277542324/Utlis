@@ -7,13 +7,13 @@
 | _class|目标Activity|
 | map | 需传入HashMap<String,String>，此方法可以不填 |
 | mBundle |传入Bundle构造方法，此方法可以不填|
-
-<br><br>
+<br>
 ### UtilsGson（解析Json的工具类）
 |方法名|说明|
 |:-------------|:-------------|
-| gsonString|当前Activity|
-| cls|目标Activity|
+|类型为String的Json值|
+| gsonString|类型为String的Json值|
+| cls|解析对应的Json的模型类|
 * GsonToBean（gsonString，cls）
 * gsonString（类型为String的Json值）
 * cls（解析对应的Json的模型类）
