@@ -20,7 +20,7 @@
 |:-------------|:-------------|
 | getScreenWidth|获取屏幕宽度，需传入当前Activity|
 | getScreenHeight|获取屏幕高度度，需传入当前Activity|
-| liearlayoutviewsize|mContext（传入当前Activity）<br>view（传入需要设置的控件）<br>width（如是通过getScreenWidth获取大小就不用带上dip2px方法，则要带dip2px方法传入值）<br>height（如是通过getScreenWidth获取大小不用带上dip2px方法，则要带dip2px方法传入值）<br>left（直接填入int 0xxx,无需使用dip2px方法包裹）<br>top（直接填入int 0xxx,无需使用dip2px方法包裹）<br>right（直接填入int 0~xxx,无需使用dip2px方法包裹）<br>bottom（直接填入int 0~xxx,无需使用dip2px方法包裹）|
+| liearlayoutviewsize|mContext（传入当前Activity）<br>view（传入需要设置的控件）<br>width（如是通过getScreenWidth获取大小就不用带上dip2px方法，则要带dip2px方法传入值）<br>height（如是通过getScreenWidth获取大小不用带上dip2px方法，则要带dip2px方法传入值）<br>left（可传可不传,直接填入int 0--xxx,无需使用dip2px方法包裹）<br>top（可传可不传,直接填入int 0--xxx,无需使用dip2px方法包裹）<br>right（可传可不传,直接填入int 0--xxx,无需使用dip2px方法包裹）<br>bottom（可传可不传,直接填入int 0--xxx,无需使用dip2px方法包裹）|
 | frameLayoutViewsize|用法同liearlayoutviewsize|
 | getScreenHeight|获取屏幕高度度，需传入当前Activity|
 
