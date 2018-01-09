@@ -9,8 +9,9 @@
 | mBundle |传入Bundle构造方法，此方法可以不填|
 
 ### UtilsGson（解析Json的工具类）
-|方法名|
+
 |方法名|说明|
+|方法名|
 |:-------------|:-------------|
 | gsonString|类型为String的Json值|
 | cls|解析对应的Json的模型类|
