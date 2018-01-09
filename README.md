@@ -25,46 +25,10 @@
 | relativepositionsize<br>(同liearlayoutviewsize)|mContext（传入当前Activity）<br><br>view（传入需要设置的控件）<br><br>width（如是通过getScreenWidth获取大小就不用带上dip2px方法，则要带dip2px方法传入值）<br><br>height（如是通过getScreenWidth获取大小不用带上dip2px方法，则要带dip2px方法传入值）<br><br>left（可传可不传,直接填入int 0--xxx,无需使用dip2px方法包裹）<br><br>top（可传可不传,直接填入int 0--xxx,无需使用dip2px方法包裹）<br><br>right（可传可不传,直接填入int 0--xxx,无需使用dip2px方法包裹）<br><br>bottom（可传可不传,直接填入int 0--xxx,无需使用dip2px方法包裹）<br><br>RuleStatus（使用绝对定位填入-1，使用位于控件填入-2）<br><br>addRule（绝对定位传入值）<br>----------RelativeLayout.ALIGN_PARENT_TOP（上）<br>----------RelativeLayout.ALIGN_PARENT_BOTTOM（下）<br>----------RelativeLayout.ALIGN_PARENT_LEFT（左）<br>----------RelativeLayout.ALIGN_PARENT_RIGHT（右）<br>----------RelativeLayout.ABOVE（位于给定ID控件之上，配合Rid使用即控件ID）<br>----------RelativeLayout.BELOW（位于给定ID控件之下，配合Rid使用即控件ID）<br><br>Rid（使用ABOVE、BELOW，必须填入控件ID）|
 | edittextviewselection<br>(输入框光标移动到最后)|view（EditText）<br><br>length(EditText中内容的长度)|
 | callPhone（调起拨打电话提示）|mContext（传入当前Activity）<br><br>phone（需要拨打电话号码）<br><br>titleMsg（提示标题头）<br><br>msg（提示内容）<br><br>titleSize（提示标题字体Size）<br><br>contentSize（提示内容字体Size）|
-
-
-* getScreenWidth （获取屏幕宽度，需传入当前Activity）<br>
-
-* getScreenHeight （获取屏幕高度度，需传入当前Activity）<br>
-* liearlayoutviewsize （动态设置LinearLayout包裹下的控件大小以及间距，需传入以下方法）
-  * mContext（传入当前Activity）
-  * view（传入需要设置的控件）
-  * width（如是通过getScreenWidth获取大小就不用带上dip2px方法，则要带dip2px方法传入值）
-  * height （如是通过getScreenWidth获取大小不用带上dip2px方法，则要带dip2px方法传入值）
-  * left （直接填入int 0~xxx,无需使用dip2px方法包裹）
-  * top（直接填入int 0~xxx,无需使用dip2px方法包裹）
-  * right（直接填入int 0~xxx,无需使用dip2px方法包裹）
-  * bottom（直接填入int 0~xxx,无需使用dip2px方法包裹）
-* frameLayoutViewsize（用法同上）
-* relativepositionsize（动态设置Relativepositionsize包裹下的控件大小以及间距，需传入以下方法）
-  * mContext（传入当前Activity）
-  * view（传入需要设置的控件）
-  * width（如是通过getScreenWidth获取大小就不用带上dip2px方法，则要带dip2px方法传入值）
-  * height （如是通过getScreenWidth获取大小不用带上dip2px方法，则要带dip2px方法传入值）
-  * left （直接填入int 0~xxx,无需使用dip2px方法包裹）
-  * top（直接填入int 0~xxx,无需使用dip2px方法包裹）
-  * right（直接填入int 0~xxx,无需使用dip2px方法包裹）
-  * bottom（直接填入int 0~xxx,无需使用dip2px方法包裹）
-  * RuleStatus（使用绝对定位填入-1，使用位于控件填入-2，不使用填入0）
-  * addRule （绝对定位传入值）
-    * RelativeLayout.ALIGN_PARENT_TOP（上）
-    * RelativeLayout.ALIGN_PARENT_BOTTOM（下）
-    * RelativeLayout.ALIGN_PARENT_LEFT（左）
-    * RelativeLayout.ALIGN_PARENT_RIGHT（右）
-    * RelativeLayout.ABOVE（位于给定ID控件之上，配合Rid使用即控件ID）
-    * RelativeLayout.BELOW（位于给定ID控件之下，配合Rid使用即控件ID）
-  * Rid （使用ABOVE、BELOW，必须填入控件ID，不使用则填入0）
-* edittextviewselection （输入框光标移动到最后）
-   * view（EditText）
-   * length (EditText中内容的长度)
-* callPhone（调起拨打电话提示）
-   * mContext（传入当前Activity）
-   * phone（需要拨打电话号码）
-   * titleMsg（提示标题头）
-   * msg（提示内容）
-   * titleSize（提示标题字体Size）
-   * contentSize（提示内容字体Size）
+| TextStyle(动态设置text的字体大小及颜色)|mContext（当前Activity）<br><br>
+textString（当前内容）<br><br>
+tSize （字体大小）<br><br>
+mColor（字体颜色）<br><br>
+startSize（起始位置）<br><br>
+endSize（ 终止位置）<br><br>
+tv（控件ID）|
