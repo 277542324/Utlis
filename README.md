@@ -1,12 +1,13 @@
 # Utlis方法类使用指南
 ### OpenActManager（跳转Activity路由）
+>get().goActivity
 | 方法名        | 说明           |
 | ------------- |:-------------:|
 | _this      | right-aligned |
 | _class      | centered      |
 | map | are neat      |
 | mBundle | are neat      |
->get().goActivity
+
 
 
 * get().goActivity(_this，_class，map，mBundle)----如只需单单跳转Activity，map、mBundle传入“null”即可
