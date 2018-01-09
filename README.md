@@ -1,6 +1,6 @@
 # Utlis方法类使用指南
 ### OpenActManager（跳转Activity路由）
->get().goActivity
+#### get().goActivity
 | 方法名        | 说明           |
 | ------------- |:-------------:|
 | _this      | right-aligned |
