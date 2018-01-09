@@ -7,7 +7,7 @@
 | _class|目标Activity|
 | map | 需传入HashMap<String,String>，此方法可以不填 |
 | mBundle |传入Bundle构造方法，此方法可以不填|
-<br>
+
 ### UtilsGson（解析Json的工具类）
 |方法名|说明|
 |:-------------|:-------------|
