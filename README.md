@@ -9,16 +9,12 @@
 | mBundle |传入Bundle构造方法，此方法可以不填|
 
 ### UtilsGson（解析Json的工具类）
-
+#### GsonToBean（gsonString，cls）
 |方法名|说明|
-|方法名|
 |:-------------|:-------------|
 | gsonString|类型为String的Json值|
 | cls|解析对应的Json的模型类|
-* GsonToBean（gsonString，cls）
-* gsonString（类型为String的Json值）
-* cls（解析对应的Json的模型类）
-<br><br>
+
 ### UtilsTools使用方法
 * getScreenWidth （获取屏幕宽度，需传入当前Activity）<br>
 
