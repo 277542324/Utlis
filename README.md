@@ -1,10 +1,11 @@
 # Utlis方法类使用指南
 ### OpenActManager（跳转Activity路由）
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| 方法名        | 说明           |
+| ------------- |:-------------:|
+| _this      | right-aligned |
+| _class      | centered      |
+| map | are neat      |
+| mBundle | are neat      |
 >get().goActivity
 
 
