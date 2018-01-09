@@ -16,6 +16,15 @@
 | cls|解析对应的Json的模型类|
 
 ### UtilsTools使用方法
+|方法名|说明|
+|:-------------|:-------------|
+| getScreenWidth|获取屏幕宽度，需传入当前Activity|
+| getScreenHeight|获取屏幕高度度，需传入当前Activity|
+| liearlayoutviewsize|mContext（传入当前Activity），view（传入需要设置的控件）|
+| getScreenHeight|获取屏幕高度度，需传入当前Activity|
+| getScreenHeight|获取屏幕高度度，需传入当前Activity|
+
+
 * getScreenWidth （获取屏幕宽度，需传入当前Activity）<br>
 
 * getScreenHeight （获取屏幕高度度，需传入当前Activity）<br>
