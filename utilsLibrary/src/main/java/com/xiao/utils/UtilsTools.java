@@ -2,14 +2,20 @@ package com.xiao.utils;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.v4.content.ContextCompat;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.AbsoluteSizeSpan;
+import android.text.style.ForegroundColorSpan;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.flyco.dialog.listener.OnBtnClickL;
 import com.flyco.dialog.widget.NormalDialog;
@@ -130,7 +136,7 @@ public class UtilsTools {
      *                 RelativeLayout.ABOVE、
      *                 RelativeLayout.BELOW)
      */
-    public static void relativepositionsize(Context mContext, View view, int width, int height, int left, int top, int right, int bottom, int RuleStatus,int addRule, int Rid) {
+    public static void relativepositionsize(Context mContext, View view, int width, int height, int left, int top, int right, int bottom, int RuleStatus, int addRule, int Rid) {
         /**status1 不要求输入根据ID进行位置定位*/
         int status1 = -1;
         /**status2 输入根据ID进行位置定位*/
@@ -220,7 +226,7 @@ public class UtilsTools {
      */
     public static void callPhone(final Context mContext, final String phone, final String titleMsg, final String msg, float titleSize, float contentSize) {
         final NormalDialog dialog = new NormalDialog(mContext);
-        dialog.content(msg + "：" + phone).style(NormalDialog.STYLE_TWO)////
+        dialog.content(msg + "：" + phone).style(NormalDialog.STYLE_TWO)
                 .titleTextSize(titleSize).contentTextSize(contentSize).title(titleMsg)
                 .show();
         dialog.setOnBtnClickL(
@@ -242,5 +248,60 @@ public class UtilsTools {
 
     public static int setColor(Context mContext, int resColor) {
         return ContextCompat.getColor(mContext, resColor);
+    }
+
+    /**
+     * @param mContext   当前Activity
+     * @param textString 当前内容
+     * @param tSize      字体大小
+     * @param mColor     字体颜色
+     * @param startSize  起始位置
+     * @param endSize    终止位置
+     * @param tv         控件ID
+     */
+    public static void TextStyle(Context mContext, String textString, int tSize, int mColor, int startSize, int endSize, TextView tv) {
+        Spannable span = new SpannableStringBuilder(textString);
+        span.setSpan(new AbsoluteSizeSpan(dip2px(mContext, tSize)), startSize, endSize, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        span.setSpan(new ForegroundColorSpan(setColor(mContext, mColor)), startSize, endSize, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        tv.setText(span);
+    }
+
+    /**
+     * @param mContext 当前Activity
+     * @param icon     图片
+     * @param width    图片宽度
+     * @param height   图片高度
+     * @param view     控件ID
+     */
+    public static void drawableLeftTextSize(Context mContext, int icon, int width, int height, TextView view) {
+        Drawable dw = ContextCompat.getDrawable(mContext, icon);
+        dw.setBounds(0, 0, dip2px(mContext, width), dip2px(mContext, height));
+        view.setCompoundDrawables(dw, null, null, null);
+    }
+
+    /**
+     * @param mContext 当前Activity
+     * @param icon     图片
+     * @param width    图片宽度
+     * @param height   图片高度
+     * @param view     控件ID
+     */
+    public static void drawableRightTextSize(Context mContext, int icon, int width, int height, TextView view) {
+        Drawable dw = ContextCompat.getDrawable(mContext, icon);
+        dw.setBounds(0, 0, dip2px(mContext, width), dip2px(mContext, height));
+        view.setCompoundDrawables(null, null, dw, null);
+    }
+
+    /**
+     * @param mContext 当前Activity
+     * @param icon     图片
+     * @param width    图片宽度
+     * @param height   图片高度
+     * @param view     控件ID
+     */
+    public static void drawableLandRTextSize(Context mContext, int icon, int width, int height, TextView view) {
+        Drawable dw = ContextCompat.getDrawable(mContext, icon);
+        dw.setBounds(0, 0, dip2px(mContext, width), dip2px(mContext, height));
+        view.setCompoundDrawables(dw, null, dw, null);
     }
 }
