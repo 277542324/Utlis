@@ -1,12 +1,12 @@
 # Utlis方法类使用指南
 ### OpenActManager（跳转Activity路由）
 #### get().goActivity
-| 方法名        | 说明           |
-| ------------- |:-------------:|
-| _this      | right-aligned |
-| _class      | centered      |
-| map | are neat      |
-| mBundle | are neat      |
+|方法名|说明|
+|:-------------|:-------------|
+| _this|当前Activity|
+| _class|目标Activity|
+| map | 需传入HashMap<String,String> |
+| mBundle |传入Bundle构造方法|
 
 
 
