@@ -1,11 +1,12 @@
 # Utlis方法类使用指南
 ### OpenActManager（跳转Activity路由）
->get().goActivity
 | Tables        | Are           | Cool  |
 | ------------- |:-------------:| -----:|
 | col 3 is      | right-aligned | $1600 |
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
+>get().goActivity
+
 
 * get().goActivity(_this，_class，map，mBundle)----如只需单单跳转Activity，map、mBundle传入“null”即可
 
