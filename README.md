@@ -26,3 +26,6 @@
 | edittextviewselection<br>(输入框光标移动到最后)|view（EditText）<br><br>length(EditText中内容的长度)|
 | callPhone（调起拨打电话提示）|mContext（传入当前Activity）<br><br>phone（需要拨打电话号码）<br><br>titleMsg（提示标题头）<br><br>msg（提示内容）<br><br>titleSize（提示标题字体Size）<br><br>contentSize（提示内容字体Size）|
 | TextStyle(动态设置text的字体大小及颜色)|mContext（当前Activity）<br><br>textString（当前内容）<br><br>tSize （字体大小）<br><br>mColor（字体颜色）<br><br>startSize（起始位置）<br><br>endSize（ 终止位置）<br><br>tv（控件ID）|
+| drawableLeftTextSize<br>(图片位置TextView的左)|mContext（当前Activity）<br><br>icon（图片）<br><br>width（图片宽度）<br><br>height（图片高度）<br><br>view（控件ID）|
+| drawableRightTextSize图片位置TextView的右|用法同上|
+| drawableRightTextSize图片位置TextView的左右|用法同上|
