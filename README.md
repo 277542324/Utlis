@@ -10,7 +10,6 @@
 
 <br><br>
 ### UtilsGson（解析Json的工具类）
-|方法名|
 |方法名|说明|
 |:-------------|:-------------|
 | gsonString|当前Activity|
