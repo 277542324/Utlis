@@ -20,6 +20,9 @@ import android.widget.TextView;
 import com.flyco.dialog.listener.OnBtnClickL;
 import com.flyco.dialog.widget.NormalDialog;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 
 /**
  * @author Administrator
@@ -303,5 +306,22 @@ public class UtilsTools {
         Drawable dw = ContextCompat.getDrawable(mContext, icon);
         dw.setBounds(0, 0, dip2px(mContext, width), dip2px(mContext, height));
         view.setCompoundDrawables(dw, null, dw, null);
+    }
+
+    /**
+     * @param obj 数据类型为JSON的数据
+     * @param res 对应的键值对
+     */
+    public static String analysisJSONObject(String obj, String res) {
+        String result;
+        try {
+            JSONObject object = new JSONObject(obj);
+            JSONObject r = object.getJSONObject(res);
+            result = r.toString();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            result = "解析异常";
+        }
+        return result;
     }
 }
