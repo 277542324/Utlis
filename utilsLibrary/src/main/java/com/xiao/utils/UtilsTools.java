@@ -11,6 +11,7 @@ import android.text.style.AbsoluteSizeSpan;
 import android.text.style.ForegroundColorSpan;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -60,23 +61,6 @@ public class UtilsTools {
         return dm.heightPixels;
     }
 
-    /**
-     * 动态设置控件的大小
-     *
-     * @param mContext
-     * @param view
-     * @param width
-     * @param height
-     * @param left
-     * @param top
-     * @param right
-     * @param bottom
-     */
-    public static void liearlayoutviewsize(Context mContext, View view, int width, int height, int left, int top, int right, int bottom) {
-        LinearLayout.LayoutParams Beslp = new LinearLayout.LayoutParams(width, height);
-        Beslp.setMargins(dip2px(mContext, left), dip2px(mContext, top), dip2px(mContext, right), dip2px(mContext, bottom));
-        view.setLayoutParams(Beslp);
-    }
 
 
     public static int dip2px(Context context, float dpValue) {
@@ -323,5 +307,32 @@ public class UtilsTools {
             result = "解析异常";
         }
         return result;
+    }
+
+
+    public static int viewWidth(final View view) {
+        ViewTreeObserver vto = view.getViewTreeObserver();
+        vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                view.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                view.getWidth();
+
+
+            }
+        });
+        return view.getWidth();
+    }
+
+    public static int viewHeight(final View view) {
+        ViewTreeObserver vto = view.getViewTreeObserver();
+        vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                view.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                view.getHeight();
+            }
+        });
+        return view.getHeight();
     }
 }
