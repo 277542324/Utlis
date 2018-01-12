@@ -32,4 +32,4 @@
 | analysisJSONObject(解析JSON)|obj（数据类型为JSON的数据)）<br><br>res（JSON对应的键值对）|
 | viewWidth(获取控件宽度)|view（需要获取控件宽度的控件）|
 | viewHeight(获取控件高度)|view（需要获取控件高度的控件）|
-| StatusBarLightMode(获取控件高度)<br>状态栏亮色模式，设置状态栏黑色文字、图标|activity（当前Activity）|
+| StatusBarLightMode<br>(状态栏亮色模式，设置状态栏黑色文字、图标)|activity（当前Activity）|
