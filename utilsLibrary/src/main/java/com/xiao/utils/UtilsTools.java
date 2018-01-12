@@ -440,5 +440,13 @@ public class UtilsTools {
         return result;
     }
 
-
+    public static JSONObject StringtoObject(String s){
+        JSONObject obj = null;
+        try {
+            obj = new JSONObject(s);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return obj;
+    }
 }
