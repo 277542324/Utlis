@@ -29,3 +29,4 @@
 | drawableLeftTextSize<br>(图片位置TextView的左)|mContext（当前Activity）<br><br>icon（图片）<br><br>width（图片宽度）<br><br>height（图片高度）<br><br>view（控件ID）|
 | drawableRightTextSize<br>(图片位置TextView的右)|用法同上|
 | drawableRightTextSize<br>(图片位置TextView的左右)|用法同上|
+| analysisJSONObject(解析JSON)|obj（数据类型为JSON的数据)）<br><br>res（JSON对应的键值对）|
