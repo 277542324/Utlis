@@ -1,4 +1,24 @@
 # Utlis方法类使用指南
+集成：
+===
+
+第 1 步、在工程的 build.gradle 中添加：
+
+```
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+第 2 步、在应用的  build.gradle 中添加：
+
+```
+	dependencies {
+	        compile 'com.github.277542324:Utlis:last-version'
+	}
+```
 ### OpenActManager（跳转Activity路由）
 #### get().goActivity(_this，_class，map，mBundle)
 |方法名|说明|
