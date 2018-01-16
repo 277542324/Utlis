@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
@@ -440,7 +442,7 @@ public class UtilsTools {
         return result;
     }
 
-    public static JSONObject StringtoObject(String s){
+    public static JSONObject StringtoObject(String s) {
         JSONObject obj = null;
         try {
             obj = new JSONObject(s);
@@ -448,5 +450,68 @@ public class UtilsTools {
             e.printStackTrace();
         }
         return obj;
+    }
+
+    /**
+     * 判断是否在Wifi状态下
+     *
+     * @param mContext 传入当前Acitity
+     */
+    public static boolean isWifi(Context mContext) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) mContext
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetInfo = connectivityManager.getActiveNetworkInfo();
+        if (activeNetInfo != null
+                && activeNetInfo.getType() == ConnectivityManager.TYPE_WIFI) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * 获取App VersionName
+     *
+     * @param mContext 传入当前Acitity
+     */
+    public static String getAppVersionName(Context mContext) {
+        try {
+            String pkName = mContext.getPackageName();
+            String versionName = mContext.getPackageManager().getPackageInfo(
+                    pkName, 0).versionName;
+            return versionName;
+        } catch (Exception e) {
+        }
+        return null;
+    }
+
+    /**
+     * 获取App PackageName
+     *
+     * @param mContext 传入当前Acitity
+     */
+    public static String getAppPackageName(Context mContext) {
+        try {
+            String pkName = mContext.getPackageName();
+            return pkName;
+        } catch (Exception e) {
+        }
+        return null;
+    }
+
+    /**
+     * 判断网络是否畅通
+     *
+     * @param mContext 传入当前Acitity
+     */
+    public static boolean isNetworkConnected(Context mContext) {
+        if (mContext != null) {
+            ConnectivityManager mConnectivityManager = (ConnectivityManager) mContext
+                    .getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo mNetworkInfo = mConnectivityManager.getActiveNetworkInfo();
+            if (mNetworkInfo != null) {
+                return mNetworkInfo.isAvailable();
+            }
+        }
+        return false;
     }
 }
