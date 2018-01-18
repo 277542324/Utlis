@@ -1,4 +1,24 @@
 # Utlis方法类使用指南
+集成：
+===
+
+第 1 步、在工程的 build.gradle 中添加：
+
+```
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+第 2 步、在应用的  build.gradle 中添加：
+
+```
+	dependencies {
+	        compile 'com.github.277542324:Utlis:last-version'
+	}
+```
 ### OpenActManager（跳转Activity路由）
 #### get().goActivity(_this，_class，map，mBundle)
 |方法名|说明|
@@ -32,4 +52,8 @@
 | analysisJSONObject(解析JSON)|obj（数据类型为JSON的数据)）<br><br>res（JSON对应的键值对）|
 | viewWidth(获取控件宽度)|view（需要获取控件宽度的控件）|
 | viewHeight(获取控件高度)|view（需要获取控件高度的控件）|
-| StatusBarLightMode<br>(状态栏亮色模式，设置状态栏黑色文字、图标)|activity（当前Activity）|
+| StatusBarLightMode<br>(状态栏亮色模式，设置状态栏文字、图标颜色)|activity（当前Activity）<br><br>state 布尔类型：true-状态栏为白色 or false-状态栏为白色|
+| isWifi(判断是否在Wifi状态下)|activity（当前Activity）|
+| isNetworkConnected<br>(判断网络是否畅通)|activity（当前Activity）|
+| getAppVersionName<br>(获取App VersionName)|activity（当前Activity）|
+| getAppPackageName<br>(获取App PackageName)|activity（当前Activity）|
