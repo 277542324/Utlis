@@ -67,7 +67,7 @@ public class OpenActManager {
      * @param _class
      */
     public  void goActivity(Context _this, Class<? extends Activity> _class,Bundle mBundle) {
-        intent.putExtra("mBunld", mBundle);
+        intent.putExtras(mBundle);
         intent.setClass(_this, _class);
         _this.startActivity(intent);
     }
@@ -85,7 +85,7 @@ public class OpenActManager {
                 intent.putExtra(key, value);
             }
         } else {
-            intent.putExtra("mBunld", mBundle);
+            intent.putExtras(mBundle);
         }
         intent.setClass(_this, _class);
         _this.startActivity(intent);
