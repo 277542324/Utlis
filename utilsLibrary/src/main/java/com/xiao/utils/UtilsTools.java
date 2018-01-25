@@ -254,7 +254,7 @@ public class UtilsTools {
      * @param endSize    终止位置
      * @param tv         控件ID
      */
-    public static void TextStyle(Context mContext, String textString, int tSize, int mColor, int startSize, int endSize, TextView tv) {
+    public static void textStyle(Context mContext, String textString, int tSize, int mColor, int startSize, int endSize, TextView tv) {
         Spannable span = new SpannableStringBuilder(textString);
         span.setSpan(new AbsoluteSizeSpan(dip2px(mContext, tSize)), startSize, endSize, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         span.setSpan(new ForegroundColorSpan(setColor(mContext, mColor)), startSize, endSize, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -288,16 +288,19 @@ public class UtilsTools {
     }
 
     /**
-     * @param mContext 当前Activity
-     * @param icon     图片
-     * @param width    图片宽度
-     * @param height   图片高度
-     * @param view     控件ID
+     * @param mContext  当前Activity
+     * @param leftIcon  左边图片
+     * @param rightIcon 右边边图片
+     * @param width     图片宽度
+     * @param height    图片高度
+     * @param view      控件ID
      */
-    public static void drawableLandRTextSize(Context mContext, int icon, int width, int height, TextView view) {
-        Drawable dw = ContextCompat.getDrawable(mContext, icon);
-        dw.setBounds(0, 0, dip2px(mContext, width), dip2px(mContext, height));
-        view.setCompoundDrawables(dw, null, dw, null);
+    public static void drawableLandRTextSize(Context mContext, int leftIcon, int rightIcon, int width, int height, TextView view) {
+        Drawable leftDw = ContextCompat.getDrawable(mContext, leftIcon);
+        leftDw.setBounds(0, 0, dip2px(mContext, width), dip2px(mContext, height));
+        Drawable rightDw = ContextCompat.getDrawable(mContext, rightIcon);
+        rightDw.setBounds(0, 0, dip2px(mContext, width), dip2px(mContext, height));
+        view.setCompoundDrawables(leftDw, null, rightDw, null);
     }
 
     /**
@@ -442,7 +445,7 @@ public class UtilsTools {
         return result;
     }
 
-    public static JSONObject StringtoObject(String s) {
+    public static JSONObject stringtoObject(String s) {
         JSONObject obj = null;
         try {
             obj = new JSONObject(s);
