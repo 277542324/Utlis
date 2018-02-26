@@ -8,6 +8,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
@@ -26,6 +27,12 @@ import android.widget.TextView;
 
 import com.flyco.dialog.listener.OnBtnClickL;
 import com.flyco.dialog.widget.NormalDialog;
+
+import net.lemonsoft.lemonhello.LemonHello;
+import net.lemonsoft.lemonhello.LemonHelloAction;
+import net.lemonsoft.lemonhello.LemonHelloInfo;
+import net.lemonsoft.lemonhello.LemonHelloView;
+import net.lemonsoft.lemonhello.interfaces.LemonHelloActionDelegate;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -516,5 +523,162 @@ public class UtilsTools {
             }
         }
         return false;
+    }
+
+    /**
+     * 提示框
+     *
+     * @param mContext 传入当前Acitity
+     * @param msg      提示内容
+     * @param mType    需要回传的类型
+     * @param mNotice  需要回传的页面
+     */
+    public static void successRemindBox(final Context mContext, String msg, final String mType, final String mNotice) {
+        LemonHello.getSuccessHello("提示", msg).setContentFontSize(16).addAction(new LemonHelloAction("确定", UtilsTools.setColor(mContext, R.color.e1C9CF3), new LemonHelloActionDelegate() {
+            @Override
+            public void onClick(LemonHelloView helloView, LemonHelloInfo helloInfo, LemonHelloAction helloAction) {
+                Bundle mBundle = new Bundle();
+                mBundle.putString("type", mType);
+                intentReceiver(mContext, mNotice, mBundle);
+                helloView.hide();
+            }
+        })).show(mContext);
+    }
+
+    /**
+     * 提示框
+     *
+     * @param mContext 传入当前Acitity
+     * @param msg      提示内容
+     * @param mTip     标题
+     * @param mColor   按钮的颜色
+     * @param cmtSize  内容文字大小
+     * @param mType    需要回传的类型
+     * @param mNotice  需要回传的页面
+     */
+
+    public static void successRemindBox(final Context mContext, String msg, final String mType, final String mNotice, final String mTip, final int cmtSize, final int mColor) {
+        LemonHello.getSuccessHello(mTip, msg).setContentFontSize(cmtSize).addAction(new LemonHelloAction("确定", UtilsTools.setColor(mContext, mColor), new LemonHelloActionDelegate() {
+            @Override
+            public void onClick(LemonHelloView helloView, LemonHelloInfo helloInfo, LemonHelloAction helloAction) {
+                Bundle mBundle = new Bundle();
+                mBundle.putString("type", mType);
+                intentReceiver(mContext, mNotice, mBundle);
+                helloView.hide();
+            }
+        })).show(mContext);
+    }
+
+    /**
+     * 消息提示框
+     */
+    public static void warnRemindBox(final Context mContext, String msg) {
+        LemonHello.getInformationHello("提示", msg).setContentFontSize(16).addAction(new LemonHelloAction("确定", UtilsTools.setColor(mContext, R.color.e1C9CF3), new LemonHelloActionDelegate() {
+            @Override
+            public void onClick(LemonHelloView helloView, LemonHelloInfo helloInfo, LemonHelloAction helloAction) {
+                helloView.hide();
+            }
+        })).show(mContext);
+    }
+
+    /**
+     * 消息提示框
+     */
+    public static void warnRemindBox(final Context mContext, String msg, String mTip, int cmtSize, int btnColor) {
+        LemonHello.getInformationHello(mTip, msg).setContentFontSize(cmtSize).addAction(new LemonHelloAction("确定", UtilsTools.setColor(mContext, btnColor), new LemonHelloActionDelegate() {
+            @Override
+            public void onClick(LemonHelloView helloView, LemonHelloInfo helloInfo, LemonHelloAction helloAction) {
+                helloView.hide();
+            }
+        })).show(mContext);
+    }
+
+    /**
+     * 提示框
+     *
+     * @param mContext 传入当前Acitity
+     * @param msg      提示内容
+     * @param mType    需要回传的类型
+     * @param mNotice  需要回传的页面
+     */
+    public static void optWarnRemindBox(final Context mContext, String msg, final String mType, final String mNotice) {
+        LemonHello.getInformationHello("提示", msg).setContentFontSize(16).addAction(new LemonHelloAction("确定", UtilsTools.setColor(mContext, R.color.c999999), new LemonHelloActionDelegate() {
+            @Override
+            public void onClick(LemonHelloView helloView, LemonHelloInfo helloInfo, LemonHelloAction helloAction) {
+                Bundle mBundle = new Bundle();
+                mBundle.putString("type", mType);
+                intentReceiver(mContext, mNotice, mBundle);
+                helloView.hide();
+            }
+        })).addAction(new LemonHelloAction("取消", UtilsTools.setColor(mContext, R.color.e1C9CF3), new LemonHelloActionDelegate() {
+            @Override
+            public void onClick(LemonHelloView helloView, LemonHelloInfo helloInfo, LemonHelloAction helloAction) {
+                helloView.hide();
+            }
+        })).show(mContext);
+    }
+
+
+    /**
+     * 提示框
+     * @param mContext 传入当前Acitity
+     * @param msg      提示内容
+     * @param mType    需要回传的类型
+     * @param mNotice  需要回传的页面
+     * @param lBtnColr 左边按钮颜色
+     * @param rBtnColr 右边按钮颜色
+     */
+    public static void optWarnRemindBox(final Context mContext, String msg, final String mType, final String mNotice, final int lBtnColr, final int rBtnColr) {
+        LemonHello.getInformationHello("提示", msg).setContentFontSize(16).addAction(new LemonHelloAction("确定", UtilsTools.setColor(mContext, lBtnColr), new LemonHelloActionDelegate() {
+            @Override
+            public void onClick(LemonHelloView helloView, LemonHelloInfo helloInfo, LemonHelloAction helloAction) {
+                Bundle mBundle = new Bundle();
+                mBundle.putString("type", mType);
+                intentReceiver(mContext, mNotice, mBundle);
+                helloView.hide();
+            }
+        })).addAction(new LemonHelloAction("取消", UtilsTools.setColor(mContext, rBtnColr), new LemonHelloActionDelegate() {
+            @Override
+            public void onClick(LemonHelloView helloView, LemonHelloInfo helloInfo, LemonHelloAction helloAction) {
+                helloView.hide();
+            }
+        })).show(mContext);
+    }
+
+    /**
+     * 提示框
+     * @param mContext 传入当前Acitity
+     * @param msg      提示内容
+     * @param mType    需要回传的类型
+     * @param mNotice  需要回传的页面
+     * @param mTip     标题
+     * @param cmtSize  内容大小
+     * @param lBtnText 左边按钮文字
+     * @param rBtnText 右边按钮文字
+     * @param lBtnColr 左边按钮颜色
+     * @param rBtnColr 右边按钮颜色
+     */
+    public static void optWarnRemindBox(final Context mContext, String msg, final String mType, final String mNotice, final String mTip, final int cmtSize, final String lBtnText, final String rBtnText, final int lBtnColr, final int rBtnColr) {
+        LemonHello.getInformationHello(mTip, msg).setContentFontSize(cmtSize).addAction(new LemonHelloAction(lBtnText, UtilsTools.setColor(mContext, lBtnColr), new LemonHelloActionDelegate() {
+            @Override
+            public void onClick(LemonHelloView helloView, LemonHelloInfo helloInfo, LemonHelloAction helloAction) {
+                Bundle mBundle = new Bundle();
+                mBundle.putString("type", mType);
+                intentReceiver(mContext, mNotice, mBundle);
+                helloView.hide();
+            }
+        })).addAction(new LemonHelloAction(rBtnText, UtilsTools.setColor(mContext, rBtnColr), new LemonHelloActionDelegate() {
+            @Override
+            public void onClick(LemonHelloView helloView, LemonHelloInfo helloInfo, LemonHelloAction helloAction) {
+                helloView.hide();
+            }
+        })).show(mContext);
+    }
+
+    private static void intentReceiver(Context mContext, String target, Bundle mBundle) {
+        Intent intent = new Intent();
+        intent.setAction(target);
+        intent.putExtras(mBundle);
+        mContext.sendBroadcast(intent);
     }
 }
