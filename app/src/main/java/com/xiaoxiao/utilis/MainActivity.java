@@ -15,6 +15,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        UtilsTools.successRemindBox(this,"我是测试","","");
+        //UtilsTools.successRemindBox(this,"我是测试","","");
     }
 }

@@ -28,6 +28,7 @@ import android.widget.TextView;
 import com.flyco.dialog.listener.OnBtnClickL;
 import com.flyco.dialog.widget.NormalDialog;
 
+import net.lemonsoft.lemonbubble.LemonBubble;
 import net.lemonsoft.lemonhello.LemonHello;
 import net.lemonsoft.lemonhello.LemonHelloAction;
 import net.lemonsoft.lemonhello.LemonHelloInfo;
@@ -526,6 +527,26 @@ public class UtilsTools {
     }
 
     /**
+     * 正确提示框
+     *
+     * @param mContext 传入当前Activity
+     * @param msg      提示信息
+     */
+    public static void promptWinRight(Context mContext, String msg) {
+        LemonBubble.showRight(mContext, msg, 1000);
+    }
+
+    /**
+     * 错误提示框
+     *
+     * @param mContext 传入当前Activity
+     * @param msg      提示信息
+     */
+    public static void promptWinError(Context mContext, String msg) {
+        LemonBubble.showRight(mContext, msg, 1000);
+    }
+
+    /**
      * 提示框
      *
      * @param mContext 传入当前Acitity
@@ -621,6 +642,7 @@ public class UtilsTools {
 
     /**
      * 提示框
+     *
      * @param mContext 传入当前Acitity
      * @param msg      提示内容
      * @param mType    需要回传的类型
@@ -647,6 +669,7 @@ public class UtilsTools {
 
     /**
      * 提示框
+     *
      * @param mContext 传入当前Acitity
      * @param msg      提示内容
      * @param mType    需要回传的类型
