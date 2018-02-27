@@ -698,7 +698,7 @@ public class UtilsTools {
         })).show(mContext);
     }
 
-    private static void intentReceiver(Context mContext, String target, Bundle mBundle) {
+    public static void intentReceiver(Context mContext, String target, Bundle mBundle) {
         Intent intent = new Intent();
         intent.setAction(target);
         intent.putExtras(mBundle);
