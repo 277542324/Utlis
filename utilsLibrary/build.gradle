@@ -36,4 +36,6 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.0'
     compile 'com.github.1em0nsOft:LemonBubble4Android:1.0.13'
     compile 'com.github.1em0nsOft:LemonHello4Android:1.0.1'
+    // 引入支付宝
+    compile files('libs/alipaySdk-20170922.jar')
 }
