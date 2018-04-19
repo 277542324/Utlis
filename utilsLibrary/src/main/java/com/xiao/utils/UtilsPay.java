@@ -8,6 +8,10 @@ import android.os.Message;
 import android.text.TextUtils;
 
 import com.alipay.sdk.app.PayTask;
+import com.tencent.mm.opensdk.modelpay.PayReq;
+import com.tencent.mm.opensdk.openapi.IWXAPI;
+import com.tencent.mm.opensdk.openapi.WXAPIFactory;
+import com.tencent.mm.opensdk.utils.Log;
 
 import java.util.Map;
 
@@ -59,6 +63,7 @@ public class UtilsPay {
                     if (TextUtils.equals(resultStatus, "9000")) {
                         Bundle mBundle = new Bundle();
                         mBundle.putString("type", map.get("mType"));
+                        /*进行支付回调*/
                         UtilsTools.intentReceiver(context, map.get("mNotice"), mBundle);
                         // 该笔订单是否真实支付成功，需要依赖服务端的异步通知。
                         //Toast.makeText(PayDemoActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
@@ -97,4 +102,27 @@ public class UtilsPay {
 
         ;
     };
+
+    public static void weiPayReq(Context mContext, String wxAppid, String wxPartnerid, String wxPrepayid, String wxNoncestr, String wxtTimestamp, String wxPackage, String wxSign) {
+        IWXAPI api = WXAPIFactory.createWXAPI(mContext, wxAppid);
+        try {
+            if (api.isWXAppInstalled()) {
+                PayReq req = new PayReq();
+                req.appId = wxAppid;
+                req.partnerId = wxPartnerid;
+                req.prepayId = wxPrepayid;
+                req.nonceStr = wxNoncestr;
+                req.timeStamp = wxtTimestamp;
+                req.packageValue = wxPackage;
+                req.sign = wxSign;
+                api.sendReq(req);
+            } else {
+                //Utils.getError(mContext,mContext.getResources().getString(R.string.noWechat), mContext.getResources().getString(R.string.confirm));
+                UtilsTools.warnRemindBox(mContext, "未安装微信!");
+            }
+
+        } catch (Exception e) {
+            Log.e("PAY_GET", "异常：" + e.getMessage());
+        }
+    }
 }
