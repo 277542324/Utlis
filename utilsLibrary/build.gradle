@@ -38,6 +38,9 @@ dependencies {
     compile 'com.github.1em0nsOft:LemonHello4Android:1.0.1'
     //引入微信以及支付
     compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.1.4'
+
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
     // 引入支付宝
     compile files('libs/alipaySdk-20170922.jar')
 }
