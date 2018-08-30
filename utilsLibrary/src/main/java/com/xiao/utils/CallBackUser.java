@@ -6,10 +6,10 @@ package com.xiao.utils;
  * @date 2018/8/21
  */
 
-public interface CallBack {
+public interface CallBackUser {
     /**
      * 不带入任何参数以及头部进行请求
      * @param string 回调String 参数
      */
-    void requestCallback(String string);
+    void requestCallbackUser(String string);
 }
