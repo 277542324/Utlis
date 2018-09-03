@@ -12,11 +12,4 @@ public interface CallBack {
      * @param type  回调类型 参数
      */
     void requestCallback(String type, String string);
-
-    /**
-     *
-     * @param string 回调String 参数
-     *
-     */
-    void requestCallback(String string);
 }

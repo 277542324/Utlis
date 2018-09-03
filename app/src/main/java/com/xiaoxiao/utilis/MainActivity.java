@@ -3,9 +3,6 @@ package com.xiaoxiao.utilis;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.xiao.utils.CallBackUser;
-import com.xiao.utils.UtilsTools;
-
 /**
  * @author Administrator
  */
