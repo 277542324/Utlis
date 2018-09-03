@@ -46,6 +46,10 @@ public class UtilsCallBack {
         mCallBack.requestCallback(str);
     }
 
+    public static void setCallBack(String type,String str) {
+        mCallBack.requestCallback(type,str);
+    }
+
     public static void setCallBackAgain(String str) {
         mCallBackAgain.requestCallbackAgain(str);
     }
