@@ -313,6 +313,32 @@ public class UtilsTools {
         view.setCompoundDrawables(leftDw, null, rightDw, null);
     }
 
+        /**
+     * @param mContext 当前Activity
+     * @param icon     图片
+     * @param width    图片宽度
+     * @param height   图片高度
+     * @param view     控件ID
+     */
+    public static void drawableTopTextSize(Context mContext, int icon, int width, int height, TextView view) {
+        Drawable dw = ContextCompat.getDrawable(mContext, icon);
+        dw.setBounds(0, 0, dip2px(mContext, width), dip2px(mContext, height));
+        view.setCompoundDrawables(null, dw, null, null);
+    }
+
+            /**
+     * @param mContext 当前Activity
+     * @param icon     图片
+     * @param width    图片宽度
+     * @param height   图片高度
+     * @param view     控件ID
+     */
+    public static void drawableBottomTextSize(Context mContext, int icon, int width, int height, TextView view) {
+        Drawable dw = ContextCompat.getDrawable(mContext, icon);
+        dw.setBounds(0, 0, dip2px(mContext, width), dip2px(mContext, height));
+        view.setCompoundDrawables(null, null, null, dw);
+    }
+
     /**
      * @param obj 数据类型为JSON的数据
      * @param res 对应的键值对
