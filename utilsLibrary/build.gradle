@@ -2,12 +2,12 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.277542324'
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 25
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
@@ -23,24 +23,25 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    testCompile 'junit:junit:4.12'
+    implementation  'com.android.support:appcompat-v7:25.3.1'
+    testImplementation 'junit:junit:4.12'
 
-    compile 'com.flyco.dialog:FlycoDialog_Lib:1.2.2@aar'
-    compile 'com.flyco.animation:FlycoAnimation_Lib:1.0.0@aar'
-    compile 'com.nineoldandroids:library:2.4.0'
-    compile 'com.google.code.gson:gson:2.8.0'
-    compile 'com.github.1em0nsOft:LemonBubble4Android:1.0.13'
-    compile 'com.github.1em0nsOft:LemonHello4Android:1.0.1'
+    implementation  'com.flyco.dialog:FlycoDialog_Lib:1.2.2@aar'
+    implementation  'com.flyco.animation:FlycoAnimation_Lib:1.0.0@aar'
+    implementation  'com.nineoldandroids:library:2.4.0'
+    implementation  'com.google.code.gson:gson:2.8.2'
+    implementation  'com.github.1em0nsOft:LemonBubble4Android:1.0.13'
+    implementation  'com.github.1em0nsOft:LemonHello4Android:1.0.1'
     //引入微信以及支付
-    compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.1.4'
+    implementation  'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.1.4'
 
-    compile 'com.github.bumptech.glide:glide:3.7.0'
+    implementation  'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
 
     // 引入支付宝
-    compile files('libs/alipaySdk-20170922.jar')
+    implementation files('libs/alipaySdk-20170922.jar')
 }

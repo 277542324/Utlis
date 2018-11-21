@@ -7,12 +7,15 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Shader;
+import android.support.annotation.NonNull;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.Transformation;
 import com.bumptech.glide.load.engine.Resource;
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.bumptech.glide.load.resource.bitmap.BitmapResource;
+
+import java.security.MessageDigest;
 
 /**
  *
@@ -33,6 +36,17 @@ public class RoundCornersTransformation implements Transformation<Bitmap> {
         mCornerType = type;
         mRadius = radius;
         mDiameter = 2 * mRadius;
+    }
+
+    @NonNull
+    @Override
+    public Resource<Bitmap> transform(@NonNull Context context, @NonNull Resource<Bitmap> resource, int outWidth, int outHeight) {
+        return null;
+    }
+
+    @Override
+    public void updateDiskCacheKey(@NonNull MessageDigest messageDigest) {
+
     }
 
     public enum CornerType {
@@ -56,7 +70,6 @@ public class RoundCornersTransformation implements Transformation<Bitmap> {
         TOP,
     }
 
-    @Override
     public Resource<Bitmap> transform(Resource<Bitmap> resource, int outWidth, int outHeight) {
         Bitmap source = resource.get();
         int    width  = source.getWidth();
@@ -184,7 +197,6 @@ public class RoundCornersTransformation implements Transformation<Bitmap> {
     }
 
 
-    @Override
     public String getId() {
         return "RoundedTransformation(radius=" + mRadius + ", diameter=" + mDiameter + ")";
     }

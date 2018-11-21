@@ -5,12 +5,18 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
+
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
 
 /**
@@ -27,9 +33,11 @@ public class UtilsImg {
      * @param view     ImageView控件
      */
     public static void glideImg(final Context mContext, final Object imgUrl, final ImageView view) {
+        RequestOptions options = new RequestOptions()
+                .centerCrop()
+                .centerCrop().transform(new RoundCornersTransformation(mContext, dip2px(mContext, 0), RoundCornersTransformation.CornerType.ALL));
         Glide.with(mContext)
-                .load(imgUrl).crossFade()
-                .centerCrop().bitmapTransform(new RoundCornersTransformation(mContext, dip2px(mContext, 0), RoundCornersTransformation.CornerType.ALL))
+                .load(imgUrl).apply(options)
                 .into(view);
     }
 
@@ -40,9 +48,12 @@ public class UtilsImg {
      * @param view       ImageView控件
      */
     public static void glideImg(final Context mContext, final Object imgUrl, int resourceId, final ImageView view) {
+        RequestOptions options = new RequestOptions()
+                .placeholder(resourceId).centerCrop()
+                .centerCrop().transform(new RoundCornersTransformation(mContext, dip2px(mContext, 0), RoundCornersTransformation.CornerType.ALL));
+
         Glide.with(mContext)
-                .load(imgUrl).crossFade().placeholder(resourceId)
-                .centerCrop().bitmapTransform(new RoundCornersTransformation(mContext, dip2px(mContext, 0), RoundCornersTransformation.CornerType.ALL))
+                .load(imgUrl).apply(options)
                 .into(view);
     }
 
@@ -53,9 +64,14 @@ public class UtilsImg {
      * @param view       ImageView控件
      */
     public static void glideImg(final Context mContext, final Object imgUrl, int resourceId, int animationId, final ImageView view) {
+        RequestOptions options = new RequestOptions()
+                .placeholder(resourceId).centerCrop()
+                .centerCrop().transform(new RoundCornersTransformation(mContext, dip2px(mContext, 0), RoundCornersTransformation.CornerType.ALL));
+
         Glide.with(mContext)
-                .load(imgUrl).placeholder(resourceId).animate(animationId)
-                .centerCrop().bitmapTransform(new RoundCornersTransformation(mContext, dip2px(mContext, 0), RoundCornersTransformation.CornerType.ALL))
+                .load(imgUrl)
+                .apply(options)
+                .transition(withCrossFade(animationId))
                 .into(view);
     }
 
@@ -67,10 +83,11 @@ public class UtilsImg {
      * @param type       图片圆角的位置
      */
     public static void glideImg(final Context mContext, final Object imgUrl, int resourceId, final ImageView view, int RoundNum, RoundCornersTransformation.CornerType type) {
-        Glide.with(mContext)
-                .load(imgUrl).placeholder(resourceId)
-                .centerCrop().bitmapTransform(new RoundCornersTransformation(mContext, dip2px(mContext, RoundNum), type))
-                .into(view);
+        RequestOptions options = new RequestOptions()
+                .placeholder(resourceId).centerCrop()
+                .centerCrop().transform(new RoundCornersTransformation(mContext, dip2px(mContext, RoundNum), type));
+
+        Glide.with(mContext).load(imgUrl).apply(options).into(view);
     }
 
     /**
@@ -83,9 +100,12 @@ public class UtilsImg {
      * @param type        图片圆角的位置
      */
     public static void glideImg(final Context mContext, final Object imgUrl, int resourceId, int animationId, final ImageView view, int roundNum, RoundCornersTransformation.CornerType type) {
+        RequestOptions options = new RequestOptions()
+        .placeholder(resourceId).centerCrop()
+        .centerCrop().transform(new RoundCornersTransformation(mContext, dip2px(mContext, roundNum), type));
+
         Glide.with(mContext)
-                .load(imgUrl).placeholder(resourceId).animate(animationId)
-                .centerCrop().bitmapTransform(new RoundCornersTransformation(mContext, dip2px(mContext, roundNum), type))
+                .load(imgUrl).apply(options)
                 .into(view);
     }
 
@@ -95,7 +115,7 @@ public class UtilsImg {
      * @param view     ImageView控件
      */
     public static void glideGifImg(final Context mContext, final String imgUrl, final ImageView view) {
-        Glide.with(mContext).load(imgUrl).asGif().diskCacheStrategy(DiskCacheStrategy.SOURCE).into(view);
+//        Glide.with(mContext).load(imgUrl).asGif().diskCacheStrategy(DiskCacheStrategy.SOURCE).into(view);
     }
 
     /**
@@ -116,9 +136,11 @@ public class UtilsImg {
      * @param view     ImageView控件
      */
     public static void glideCircleImg(Context mContext, String imgUrl, ImageView view) {
+        RequestOptions options = new RequestOptions()
+                .centerCrop().transform(new GlideCircleTransform(mContext));
         Glide.with(mContext)
-                .load(imgUrl).crossFade()
-                .centerCrop().transform(new GlideCircleTransform(mContext))
+                .load(imgUrl).transition(new DrawableTransitionOptions().crossFade())
+                .apply(options)
                 .into(view);
     }
 
@@ -129,9 +151,11 @@ public class UtilsImg {
      * @param view       ImageView控件
      */
     public static void glideCircleImg(Context mContext, String imgUrl, int resourceId, ImageView view) {
+        RequestOptions options = new RequestOptions()
+                .placeholder(resourceId).centerCrop().transform(new GlideCircleTransform(mContext));
+
         Glide.with(mContext)
-                .load(imgUrl).placeholder(resourceId).crossFade()
-                .centerCrop().transform(new GlideCircleTransform(mContext))
+                .load(imgUrl).apply(options).transition(new DrawableTransitionOptions().crossFade())
                 .into(view);
     }
 
@@ -142,27 +166,27 @@ public class UtilsImg {
      * @param transitionTime 图片显示时候的动画时间
      * @param view           ImageView控件
      */
-    public static void alphaAnima(final Context mContext, Object beginUrl, final Object endUrl, final int transitionTime, final ImageView view) {
-        Glide.with(mContext).load(beginUrl).asBitmap()
-                .into(new SimpleTarget<Bitmap>() {
+    public static void alphaAnima(final Context mContext, final Object beginUrl, final Object endUrl, final int transitionTime, final ImageView view) {
+        Glide.with(mContext).asBitmap().load(beginUrl).into(new SimpleTarget<Bitmap>() {
+            @Override
+            public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
+                d1 = BitmapToDrawable(mContext, resource);
+                Glide.with(mContext).asBitmap().load(beginUrl).into(new SimpleTarget<Bitmap>() {
+
                     @Override
-                    public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
-                        d1 = BitmapToDrawable(mContext, resource);
-                        Glide.with(mContext).load(endUrl).asBitmap()
-                                .into(new SimpleTarget<Bitmap>() {
-                                    @Override
-                                    public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
-                                        d2 = BitmapToDrawable(mContext, resource);
+                    public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
+                        d2 = BitmapToDrawable(mContext, resource);
                                         Drawable[] drawableArray = {
                                                 d1, d2
                                         };
                                         TransitionDrawable transitionDrawable = new TransitionDrawable(drawableArray);
                                         view.setImageDrawable(transitionDrawable);
                                         transitionDrawable.startTransition(transitionTime);
-                                    }
-                                });
                     }
                 });
+            }
+
+        });
     }
 
 
