@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.xiao.utils.UtilsImg;
+import com.xiao.utils.UtilsTools;
 
 /**
  * @author Administrator
@@ -17,8 +18,8 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         img = findViewById(R.id.img);
-         UtilsImg.glideImg(this,R.mipmap.bg,R.mipmap.ic_launcher,img,30);
-        //UtilsTools.successRemindBox(this,"我是测试","","");.
+//         UtilsImg.glideImg(this,R.mipmap.bg,R.mipmap.ic_launcher,img,30);
+        UtilsTools.successRemindBox(this,"我是测试","","");
     }
 
 }
